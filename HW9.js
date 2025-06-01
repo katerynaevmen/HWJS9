@@ -91,21 +91,23 @@ console.log(checkForSpam(stringTrue2));
 // Операція введення числа користувачем і збереження в масив триває до тих пор, пір, поки користувач не натисне Cancel в prompt.
 // Після того як користувач припинив введення натиснувши Cancel, якщо масив не порожній, необхідно порахувати суму всіх елементів масиву і записати її в змінну total. Використовуй цикл for або for...of. Після чого в консоль виведи рядок 'Загальна сума чисел дорівнює [сума]'.
 // Робити перевірку того, що користувач ввів саме число, а не довільний набір символів, не обов'язково. Якщо хочеш, в разі некоректного введення, показуй alert з текстом 'Було введено не число, попробуйте ще раз', при цьому результат promptзаписувати в масив чисел не потрібно, після чого знову користувачеві пропонується ввести число в prompt.
-// let input;
-// const numbers = [];
-// let total = 0;
 
-// const inputtingNumbers = function(input, numbers) {
-//     let total = 0;
-//     return total;
-// }
-
-let input1;
+let input;
+const numbers = [];
 let total = 0;
-const numbers1 = [];
-numbers1.push(input1);
 
-console.log(numbers1);
-// console.log(inputtingNumbers(input1, numbers1));
-console.log(input1);
+while (numbers.length < Infinity) {
+    input = Number(prompt("Enter the number"));
+    numbers.push(input);
+    console.log(numbers);
+    if (input === 0) {
+     break;
+    }
+ }
 
+ for (let i = 0; i < numbers.length; i += 1) {
+    const elem = numbers[i];
+    total += elem;
+    console.log(`Total sum of numbers = ${total}`);
+ }
+ 
